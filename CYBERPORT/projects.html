@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="css/front.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <script src="js/projects.js" defer></script>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <ul class='nav-links'>
+            <li><a href="about.html">About</a></li>
+            
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="front.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="projects-grid">
+            <div class="project-card" onclick="openPopup('phishing')">
+                <div class="play-button">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="rgba(231, 76, 60, 0.1)" stroke="#e74c3c" stroke-width="2"/>
+                        <polygon points="10,8 16,12 10,16" fill="#e74c3c"/>
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Phishing Simulation</h3>
+                    <p>Interactive cybersecurity training simulation demonstrating phishing attack scenarios and defense strategies.</p>
+                    <div class="project-tools">
+                        <h4>Tools Used:</h4>
+                        <div class="tools-tags">
+                            <span class="tool-tag">UTM</span>
+                            <span class="tool-tag">Parrot OS</span>
+                            <span class="tool-tag">MacBook</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openPopup('homelab')">
+                <div class="play-button">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="rgba(231, 76, 60, 0.1)" stroke="#e74c3c" stroke-width="2"/>
+                        <polygon points="10,8 16,12 10,16" fill="#e74c3c"/>
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Setting up Home Lab</h3>
+                    <p>Complete home laboratory setup for cybersecurity testing and learning, featuring virtualized environments and network configurations.</p>
+                    <div class="project-tools">
+                        <h4>Tools Used:</h4>
+                        <div class="tools-tags">
+                            <span class="tool-tag">VirtualBox</span>
+                            <span class="tool-tag">pfSense</span>
+                            <span class="tool-tag">Kali Linux</span>
+                            <span class="tool-tag">Windows Server</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openPopup('vulnscanner')">
+                <div class="play-button">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="rgba(231, 76, 60, 0.1)" stroke="#e74c3c" stroke-width="2"/>
+                        <polygon points="10,8 16,12 10,16" fill="#e74c3c"/>
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Vulnerability Scanner</h3>
+                    <p>Comprehensive vulnerability assessment project using enterprise-grade scanning tools to identify and analyze security weaknesses in network infrastructure.</p>
+                    <div class="project-tools">
+                        <h4>Tools Used:</h4>
+                        <div class="tools-tags">
+                            <span class="tool-tag">VMware</span>
+                            <span class="tool-tag">Nmap</span>
+                            <span class="tool-tag">Windows</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup Modals -->
+    <!-- Phishing Simulation Popup -->
+    <div id="phishing-modal" class="popup-modal" onclick="closePopup()">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Phishing Simulation</h2>
+            <div class="video-container">
+                <video id="phishing-video" controls>
+                    <source src="assets/videos/project simulation phising .mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="project-description">
+                <p>This phishing simulation demonstrates real-world attack scenarios and teaches users how to identify and respond to phishing attempts.</p>
+                <div class="project-tools-popup">
+                    <h4>Tools & Environment:</h4>
+                    <div class="tools-tags">
+                        <span class="tool-tag">UTM Virtualization</span>
+                        <span class="tool-tag">Parrot Security OS</span>
+                        <span class="tool-tag">MacBook Pro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home Lab Popup -->
+    <div id="homelab-modal" class="popup-modal" onclick="closePopup()">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Setting up Home Lab</h2>
+            <div class="video-container">
+                <video id="homelab-video" controls>
+                    <source src="assets/videos/Settinguphomelab.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="project-description">
+                <p>Complete home laboratory setup featuring multiple virtual machines, network segmentation, and security tools. This lab environment provides a safe space for penetration testing, vulnerability assessment, and cybersecurity skill development.</p>
+                <div class="project-tools-popup">
+                    <h4>Tools & Environment:</h4>
+                    <div class="tools-tags">
+                        <span class="tool-tag">VirtualBox</span>
+                        <span class="tool-tag">pfSense Firewall</span>
+                        <span class="tool-tag">Kali Linux</span>
+                        <span class="tool-tag">Windows Server</span>
+                        <span class="tool-tag">Ubuntu Server</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vulnerability Scanner Popup -->
+    <div id="vulnscanner-modal" class="popup-modal" onclick="closePopup()">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Vulnerability Scanner</h2>
+            <div class="video-container">
+                <img src="assets/images/nmap_vuln_example_screenshot.png" alt="Nmap vulnerability example screenshot">
+            </div>
+            <div class="project-description">
+                <p>This vulnerability scanner project demonstrates comprehensive security assessment techniques using industry-standard tools. The project showcases systematic vulnerability identification, risk assessment, and reporting methodologies used in professional cybersecurity environments.</p>
+                <div class="project-tools-popup">
+                    <h4>Tools & Environment:</h4>
+                    <div class="tools-tags">
+                        <span class="tool-tag">VMware Workstation</span>
+                        <span class="tool-tag">Nmap</span>
+                        <span class="tool-tag">Windows 10/11</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openPopup(projectType) {
+            if (projectType === 'phishing') {
+                document.getElementById('phishing-modal').style.display = 'flex';
+            } else if (projectType === 'homelab') {
+                document.getElementById('homelab-modal').style.display = 'flex';
+            } else if (projectType === 'vulnscanner') {
+                document.getElementById('vulnscanner-modal').style.display = 'flex';
+            }
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopup() {
+            document.getElementById('phishing-modal').style.display = 'none';
+            document.getElementById('homelab-modal').style.display = 'none';
+            document.getElementById('vulnscanner-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Pause all videos when closing popups
+            const phishingVideo = document.getElementById('phishing-video');
+            const homelabVideo = document.getElementById('homelab-video');
+            const vulnscannerVideo = document.getElementById('vulnscanner-video');
+            phishingVideo.pause();
+            homelabVideo.pause();
+            vulnscannerVideo.pause();
+        }
+
+        // Close popup when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>

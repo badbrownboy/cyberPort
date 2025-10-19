@@ -1,0 +1,28 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  cursor: none;
+}
+.star-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%) rotate(0deg);
+  filter: drop-shadow(0 0 16px #ff6b6b) drop-shadow(0 0 32px #e74c3c);
+  transition: filter 0.18s cubic-bezier(.4,0,.2,1);
+  will-change: transform, filter;
+}
+.star-cursor.glow {
+  filter: drop-shadow(0 0 32px #ff6b6b) drop-shadow(0 0 64px #e74c3c);
+}
+.star-svg {
+  width: 44px;
+  height: 44px;
+  display: block;
+}

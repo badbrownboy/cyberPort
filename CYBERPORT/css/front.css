@@ -1,0 +1,813 @@
+/* Bubbles background effect */
+.bubbles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.bubble {
+  position: absolute;
+  bottom: -120px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #e74c3c 100%);
+  opacity: 0.18;
+  border-radius: 50%;
+  animation: bubbleUp 16s linear infinite;
+}
+.bubble:nth-child(1) { left: 10vw; width: 60px; height: 60px; animation-delay: 0s; }
+.bubble:nth-child(2) { left: 25vw; width: 40px; height: 40px; animation-delay: 2s; }
+.bubble:nth-child(3) { left: 40vw; width: 80px; height: 80px; animation-delay: 4s; }
+.bubble:nth-child(4) { left: 55vw; width: 50px; height: 50px; animation-delay: 1s; }
+.bubble:nth-child(5) { left: 70vw; width: 100px; height: 100px; animation-delay: 3s; }
+.bubble:nth-child(6) { left: 85vw; width: 30px; height: 30px; animation-delay: 5s; }
+.bubble:nth-child(7) { left: 15vw; width: 90px; height: 90px; animation-delay: 7s; }
+.bubble:nth-child(8) { left: 60vw; width: 70px; height: 70px; animation-delay: 6s; }
+.bubble:nth-child(9) { left: 80vw; width: 50px; height: 50px; animation-delay: 8s; }
+.bubble:nth-child(10) { left: 35vw; width: 110px; height: 110px; animation-delay: 10s; }
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.18;
+  }
+  80% {
+    opacity: 0.18;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
+/* Navigation Bar Styling */
+
+#desktop-nav {
+  width: 100vw;
+  background: linear-gradient(90deg, rgba(231,76,60,0.85) 0%, rgba(255,107,107,0.85) 100%);
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px) saturate(1.5);
+  border-bottom: 1.5px solid rgba(255,255,255,0.12);
+}
+
+#desktop-nav .nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  list-style: none;
+  margin: 0;
+  padding: 1.1rem 0 1.1rem 0;
+  font-family: 'SF Pro Display', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.08);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+#desktop-nav .nav-links li a {
+  color: #f5f5f7;
+  font-size: 1.18rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  position: relative;
+  padding: 0.2rem 0.7rem;
+  transition: color 0.2s;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  text-transform: none;
+}
+
+#desktop-nav .nav-links li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(90deg, #e74c3c 0%, #ff6b6b 100%);
+  border-radius: 2px;
+  opacity: 0.85;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+#desktop-nav .nav-links li a:hover::after,
+#desktop-nav .nav-links li a:focus::after,
+#desktop-nav .nav-links li a.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+#desktop-nav .nav-links li a:hover,
+#desktop-nav .nav-links li a:focus,
+#desktop-nav .nav-links li a.active {
+  color: #ff6b6b;
+}
+/* GitHub icon hover effect under hero subtitle */
+.github-hover {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+.github-hover a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #222;
+  font-size: 2.8rem;
+  background: #fff;
+  border-radius: 2.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+  transition: box-shadow 0.2s, background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.github-hover a:hover {
+  background: #222;
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+.github-hover .fa-github {
+  font-size: 2.8rem;
+  margin-right: 0.7rem;
+  transition: color 0.2s;
+}
+.github-hover .github-username {
+  font-size: 2.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #222;
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: opacity 0.3s, max-width 0.4s, color 0.2s;
+}
+.github-hover a:hover .github-username {
+  opacity: 1;
+  max-width: 300px;
+  color: #fff;
+}
+/* Layout for hero and MacBook side by side */
+
+.hero-macbook-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.hero-macbook-flex .hero {
+  flex: 1 1 0;
+  min-width: 320px;
+  max-width: 600px;
+  padding-right: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 3vh;
+}
+
+.hero-macbook-flex .macbook-flex-right {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 320px;
+}
+/* Apple-style Hero Section with Fade In */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start; /* push to the top */
+  min-height: 100vh; /* fills screen */
+  padding-left: 7vw;
+  padding-top: 10vh; /* push slightly down from top */
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  background: none;
+
+  /* Fade-in animation */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+/* Keyframes for the fade-in-up effect */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.1;
+  color: #070000;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+.hero h1::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 6px;
+  background: linear-gradient(90deg, #e74c3c 0%, #ff6b6b 100%);
+  border-radius: 3px;
+  opacity: 0.85;
+  animation: underline-grow 1.2s cubic-bezier(0.4,0,0.2,1) 0.5s forwards;
+}
+
+@keyframes underline-grow {
+  to {
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+  
+.hero p {
+  font-size: 1.45rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Arial, sans-serif;
+  font-weight: 400;
+  color: #444;
+  margin: 0;
+  margin-top: 0.5rem;
+  max-width: 600px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  letter-spacing: 0.02em;
+}
+
+.macbook-flex-right {
+  display: flex;
+  justify-content: center; /* center it first */
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.macbook {
+  width: 320px;
+  height: 205px;
+  position: relative;
+  margin: 0 18vw 0 0;
+  perspective: 1000px;
+}
+
+.shadow {
+  position: absolute;
+  width: 128px;
+  height: 0px;
+  left: 86px;
+  top: 340px;
+  transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  box-shadow: 0 0 120px 80px rgba(0,0,0,0.3);
+  animation: shadow infinite 7s ease;
+}
+
+.inner {
+  z-index: 20;
+  position: absolute;
+  width: 320px;
+  height: 205px;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+  animation: rotate infinite 7s ease;
+}
+
+.screen {
+  width: 320px;
+  height: 205px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 15px;
+  background: #ddd;
+  transform-style: preserve-3d;
+  transform-origin: 50% 200px;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  animation: lid-screen infinite 7s ease;
+  background-image: linear-gradient(45deg, rgba(0,0,0,0.34) 0%,rgba(0,0,0,0) 100%);
+  background-position: left bottom;
+  background-size: 600px 600px;
+  box-shadow: inset 0 6px 14px rgba(255,255,255,0.5);
+}
+
+.screen .logo {
+  position: absolute;
+  width: 42px;
+  height: 50px;
+  left: 50%;
+  top: 50%;
+  margin: -25px 0 0 -21px;
+  transform: rotateY(180deg) translateZ(0.1px);
+}
+
+.screen .face-one {
+  width: 320px;
+  height: 205px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 15px;
+  background: #d3d3d3;
+  transform: translateZ(4px);
+  background-image: linear-gradient(45deg,rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+}
+
+.screen .face-one .camera {
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background: #000;
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  margin-left: -3px;
+}
+
+.screen .face-one .display {
+  width: 275px;
+  height: 156px;
+  margin: 22px;
+  background-color: #000;
+  background-size: 100% 100%;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: inset 0 0 4px rgba(0,0,0,1);
+}
+
+.screen .face-one .display .shade {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 275px;
+  height: 156px;
+  background: linear-gradient(-135deg, rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 47%,rgba(255,255,255,0) 48%);
+  animation: screen-shade infinite 7s ease;
+  background-size: 600px 400px;
+  background-position: 0px 0px;
+}
+
+.screen .face-one span {
+  position: absolute;
+  top: 180px;
+  left: 120px;
+  font-size: 12px;
+  color: #666;
+}
+
+.macbody {
+  width: 320px;
+  height: 205px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 15px;
+  background: #cbcbcb;
+  transform-style: preserve-3d;
+  transform-origin: 50% bottom;
+  transform: rotateX(-90deg);
+  animation: lid-macbody infinite 7s ease;
+  background-image: linear-gradient(45deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+}
+
+.macbody .face-one {
+  width: 320px;
+  height: 205px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 15px;
+  transform-style: preserve-3d;
+  background: #dfdfdf;
+  animation: lid-keyboard-area infinite 7s ease;
+  transform: translateZ(-4px);
+  background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+}
+
+.macbody .touchpad {
+  width: 85px;
+  height: 66px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  margin: -92px 0 0 -40px;
+  background: #cdcdcd;
+  background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+  box-shadow: inset 0 0 6px #888;
+}
+
+.macbody .keyboard {
+  width: 275px;
+  height: 96px;
+  position: absolute;
+  left: 15px;
+  top: 88px;
+  border-radius: 8px;
+  transform-style: preserve-3d;
+  background: #cdcdcd;
+  background-image: linear-gradient(30deg, rgba(0,0,0,0.24) 0%,rgba(0,0,0,0) 100%);
+  box-shadow: inset 0 0 6px #777;
+  padding: 0 0 0 4px;
+}
+
+.keyboard .key {
+  width: 12px;
+  height: 12px;
+  background: #444;
+  float: left;
+  margin: 2px;
+  transform: translateZ(-4px);
+  border-radius: 4px;
+  box-shadow: 0 -4px 0 #222;
+  animation: keys infinite 7s ease;
+}
+
+.key.space {
+  width: 90px;
+}
+
+.key.f {
+  height: 6px;
+}
+
+.macbody .pad {
+  width: 10px;
+  height: 10px;
+  background: #333;
+  border-radius: 100%;
+  position: absolute;
+}
+
+.pad.one {
+  left: 42px;
+  top: 42px;
+}
+
+.pad.two {
+  right: 42px;
+  top: 42px;
+}
+
+.pad.three {
+  right: 42px;
+  bottom: 42px;
+}
+
+.pad.four {
+  left: 42px;
+  bottom: 42px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+  }
+
+  5% {
+    transform: rotateX(-20deg) rotateY(-20deg) rotateZ(0deg);
+  }
+
+  20% {
+    transform: rotateX(30deg) rotateY(200deg) rotateZ(0deg);
+  }
+
+  25% {
+    transform: rotateX(-60deg) rotateY(150deg) rotateZ(0deg);
+  }
+
+  60% {
+    transform: rotateX(-20deg) rotateY(130deg) rotateZ(0deg);
+  }
+
+  65% {
+    transform: rotateX(-20deg) rotateY(120deg) rotateZ(0deg);
+  }
+
+  80% {
+    transform: rotateX(-20deg) rotateY(375deg) rotateZ(0deg);
+  }
+
+  85% {
+    transform: rotateX(-20deg) rotateY(357deg) rotateZ(0deg);
+  }
+
+  87% {
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+  }
+}
+
+@keyframes lid-screen {
+  0% {
+    transform: rotateX(0deg);
+    background-position: left bottom;
+  }
+
+  5% {
+    transform: rotateX(50deg);
+    background-position: left bottom;
+  }
+
+  20% {
+    transform: rotateX(-90deg);
+    background-position: -150px top;
+  }
+
+  25% {
+    transform: rotateX(15deg);
+    background-position: left bottom;
+  }
+
+  30% {
+    transform: rotateX(-5deg);
+    background-position: right top;
+  }
+
+  38% {
+    transform: rotateX(5deg);
+    background-position: right top;
+  }
+
+  48% {
+    transform: rotateX(0deg);
+    background-position: right top;
+  }
+
+  90% {
+    transform: rotateX(0deg);
+    background-position: right top;
+  }
+
+  100% {
+    transform: rotateX(0deg);
+    background-position: right center;
+  }
+}
+
+@keyframes lid-macbody {
+  0% {
+    transform: rotateX(-90deg);
+  }
+
+  50% {
+    transform: rotateX(-90deg);
+  }
+
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes lid-keyboard-area {
+  0% {
+    background-color: #dfdfdf;
+  }
+
+  50% {
+    background-color: #bbb;
+  }
+
+  100% {
+    background-color: #dfdfdf;
+  }
+}
+
+@keyframes screen-shade {
+  0% {
+    background-position: -20px 0px;
+  }
+
+  5% {
+    background-position: -40px 0px;
+  }
+
+  20% {
+    background-position: 200px 0;
+  }
+
+  50% {
+    background-position: -200px 0;
+  }
+
+  80% {
+    background-position: 0px 0px;
+  }
+
+  85% {
+    background-position: -30px 0;
+  }
+
+  90% {
+    background-position: -20px 0;
+  }
+
+  100% {
+    background-position: -20px 0px;
+  }
+}
+
+@keyframes keys {
+  0% {
+    box-shadow: 0 -2px 0 #222;
+  }
+
+  5% {
+    box-shadow: 1 -1px 0 #222;
+  }
+
+  20% {
+    box-shadow: -1px 1px 0 #222;
+  }
+
+  25% {
+    box-shadow: -1px 1px 0 #222;
+  }
+
+  60% {
+    box-shadow: -1px 1px 0 #222;
+  }
+
+  80% {
+    box-shadow: 0 -2px 0 #222;
+  }
+
+  85% {
+    box-shadow: 0 -2px 0 #222;
+  }
+
+  87% {
+    box-shadow: 0 -2px 0 #222;
+  }
+
+  100% {
+    box-shadow: 0 -2px 0 #222;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  }
+
+  5% {
+    transform: rotateX(80deg) rotateY(10deg) rotateZ(0deg);
+    box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  }
+
+  20% {
+    transform: rotateX(30deg) rotateY(-20deg) rotateZ(-20deg);
+    box-shadow: 0 0 50px 30px rgba(0,0,0,0.3);
+  }
+
+  25% {
+    transform: rotateX(80deg) rotateY(-20deg) rotateZ(50deg);
+    box-shadow: 0 0 35px 15px rgba(0,0,0,0.1);
+  }
+
+  60% {
+    transform: rotateX(80deg) rotateY(0deg) rotateZ(-50deg) translateX(30px);
+    box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  }
+
+  100% {
+    box-shadow: 0 0 60px 40px rgba(0,0,0,0.3);
+  }
+}
+/* Hero Buttons Styling */
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.hero-buttons a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #222;
+  font-size: 2.1rem;
+  background: #fff;
+  border-radius: 2.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 0.8rem 1.8rem 0.8rem 1.8rem;
+  transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+  position: relative;
+  overflow: hidden;
+  min-width: 320px;
+  justify-content: center;
+  margin-bottom: 0.2rem;
+}
+.hero-buttons a:hover {
+  background: #222;
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+.hero-buttons .fa-file-arrow-down,
+.hero-buttons .fa-envelope {
+  font-size: 2.1rem;
+  margin-right: 0.7rem;
+  transition: color 0.2s;
+}
+.hero-buttons .github-username {
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #222;
+  opacity: 1;
+  max-width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.hero-buttons a:hover .github-username {
+  color: #fff;
+}
+
+/* Contact button email reveal on hover */
+.hero-buttons .contact-text,
+.hero-buttons .email-address {
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: opacity 0.3s ease, color 0.2s;
+}
+
+.hero-buttons .email-address {
+  position: absolute;
+  opacity: 0;
+  color: #fff;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.hero-buttons a:hover .contact-text {
+  opacity: 0;
+}
+
+.hero-buttons a:hover .email-address {
+  opacity: 1;
+  display: inline !important;
+}
+
+@media (max-width: 900px) {
+  .hero-buttons {
+    gap: 0.8rem;
+    margin-top: 1.1rem;
+  }
+  .hero-buttons a {
+    min-width: 220px;
+    font-size: 1.2rem;
+    padding: 0.6rem 1.2rem;
+  }
+  .hero-buttons .fa-file-arrow-down,
+  .hero-buttons .fa-envelope {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
+  .hero-buttons .github-username {
+    font-size: 1rem;
+  }
+  .hero-buttons .contact-text {
+    font-size: 1rem;
+  }
+  .hero-buttons .email-address {
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+  }
+}
+

@@ -1,0 +1,298 @@
+/* Projects Section Styling */
+.projects-section {
+    min-height: 100vh;
+    padding: 120px 20px 60px 20px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Project Card */
+.project-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 3rem;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+    position: relative;
+    text-align: center;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+/* Play Button */
+.play-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.play-button svg {
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.play-button:hover svg {
+    animation: bounce 0.6s ease;
+}
+
+.play-button:hover svg circle {
+    fill: rgba(255, 107, 107, 0.2);
+    stroke: #ff6b6b;
+}
+
+.play-button:hover svg polygon {
+    fill: #ff6b6b;
+}
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    80% {
+        transform: translateY(-5px);
+    }
+}
+
+.project-content {
+    text-align: left;
+}
+
+.project-content h3 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #e74c3c 0%, #ff6b6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.project-content p {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #6e6e73;
+    margin-bottom: 2rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
+    color: #e74c3c;
+    padding: 0.5rem 1rem;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(231, 76, 60, 0.2);
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.2) 0%, rgba(255, 107, 107, 0.2) 100%);
+    transform: translateY(-2px);
+}
+
+/* Project Tools Section */
+.project-tools {
+    margin-top: 1.5rem;
+}
+
+.project-tools h4,
+.project-tools-popup h4 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 0.8rem;
+    margin-top: 0;
+}
+
+.tools-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tool-tag {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(96, 165, 250, 0.1) 100%);
+    color: #3b82f6;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: all 0.2s ease;
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.tool-tag:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(96, 165, 250, 0.2) 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.project-tools-popup {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Popup Modal */
+.popup-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.popup-content {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 800px;
+    position: relative;
+    overflow-y: auto;
+    transform: scale(0.8);
+    animation: popupScale 0.3s ease-out forwards;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #e74c3c;
+}
+
+.popup-content h2 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 1.5rem;
+    padding-right: 2rem;
+}
+
+.video-container {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+ 
+.video-container video,
+.video-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popupScale {
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 100px 15px 40px 15px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .project-card {
+        padding: 2rem;
+    }
+    
+    .project-content h3 {
+        font-size: 2rem;
+    }
+    
+    .popup-content {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .popup-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        gap: 1.5rem;
+    }
+    
+    .project-card {
+        padding: 1.5rem;
+    }
+    
+    .project-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .popup-content {
+        padding: 1rem;
+    }
+}
